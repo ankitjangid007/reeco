@@ -34,7 +34,7 @@ const StyledModal = styled.div`
   .modal-content {
     position: relative;
     width: 100%;
-    max-width: 320px;
+    max-width: 500px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;

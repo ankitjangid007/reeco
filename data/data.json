@@ -1,5 +1,6 @@
 [
   {
+    "productId": 1,
     "productImg": "/images/Avocado.jpg",
     "productName": "Chicken Breast Fillets, Boneless matuuma Marinated 6 Ounce Raw.",
     "brand": "Hormel Black babelmany",
@@ -8,6 +9,7 @@
     "total": 0
   },
   {
+    "productId": 2,
     "productImg": "/images/Avocado.jpg",
     "productName": "Chicken Breast Fillets, Boneless matuuma Marinated 6 Ounce Raw.",
     "brand": "Hormel Black babelmany",
@@ -16,6 +18,7 @@
     "total": 0
   },
   {
+    "productId": 3,
     "productImg": "/images/Avocado.jpg",
     "productName": "Chicken Breast Fillets, Boneless matuuma Marinated 6 Ounce Raw.",
     "brand": "Hormel Black babelmany",
@@ -24,6 +27,7 @@
     "total": 0
   },
   {
+    "productId": 4,
     "productImg": "/images/Avocado.jpg",
     "productName": "Chicken Breast Fillets, Boneless matuuma Marinated 6 Ounce Raw.",
     "brand": "Hormel Black babelmany",
@@ -32,6 +36,7 @@
     "total": 0
   },
   {
+    "productId": 5,
     "productImg": "/images/Avocado.jpg",
     "productName": "Chicken Breast Fillets, Boneless matuuma Marinated 6 Ounce Raw.",
     "brand": "Hormel Black babelmany",

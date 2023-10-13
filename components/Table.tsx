@@ -10,6 +10,7 @@ import Modal from "./modals/Modal";
 
 import { BsCheckLg } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import EditOrderModal from "./modals/EditOrderModal";
 
 interface TableColumn {
   header: string;
@@ -75,6 +76,8 @@ const Table: React.FC<TableProps> = ({ data, columns }) => {
   const [selectedRowIndex, setSelectedRowIndex] = useState<number | null>(null);
   const [selectProductName, setSelectProductName] = useState("");
   const [isUrgent, setIsUrgent] = useState(false);
+  const [itemId, setItemId] = useState<number | null>(null);
+  const [openEditModal, setOpenEditModal] = useState(false);
   const dispatch = useDispatch();
 
   const handleApproveClick = (rowIndex: number) => {
@@ -103,13 +106,18 @@ const Table: React.FC<TableProps> = ({ data, columns }) => {
         );
       }
       setIsModalOpen(false);
-      setIsUrgent(false);
+      setIsUrgent((prev) => !prev);
     }
   };
 
   const handleMissingUrgent = () => {
     setIsUrgent(true);
     handleSubmitMissingStatus(true);
+  };
+
+  const handleEditClick = (id: number) => {
+    setOpenEditModal(true);
+    setItemId(id);
   };
 
   return (
@@ -166,7 +174,10 @@ const Table: React.FC<TableProps> = ({ data, columns }) => {
                             handleMissingClick(rowIndex, row["productName"])
                           }
                         />
-                        <Button label="Edit" onClick={() => {}} />
+                        <Button
+                          label="Edit"
+                          onClick={() => handleEditClick(row.productId)}
+                        />
                       </ButtonContainer>
                     </StatusContainer>
                   ) : column.accessor === "productName" ? (
@@ -197,7 +208,13 @@ const Table: React.FC<TableProps> = ({ data, columns }) => {
         onSubmit={handleMissingUrgent}
       />
 
-      <Modal
+      <EditOrderModal
+        itemId={itemId}
+        isOpen={openEditModal}
+        onClose={() => setOpenEditModal(false)}
+      />
+
+      {/* <Modal
         title={selectProductName}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -205,7 +222,7 @@ const Table: React.FC<TableProps> = ({ data, columns }) => {
         secondaryActionLabel="No"
         secondaryAction={() => handleSubmitMissingStatus(false)}
         onSubmit={handleMissingUrgent}
-      />
+      /> */}
     </>
   );
 };
